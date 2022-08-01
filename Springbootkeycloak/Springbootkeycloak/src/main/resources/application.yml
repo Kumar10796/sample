@@ -1,0 +1,31 @@
+server:
+ port: 8082
+ 
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: demo
+  resource: demo-client
+  public-client : true
+  bearer-only: true
+  credentials:
+    secret: 4BXLBWWIWvMSQM98tjnJ2EscdJYYrj5Z
+    
+  
+  
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/keycloack?&useSSL=false
+    username: root
+    password: root
+    hikari:
+      initialization - fail-timeout: 0
+      
+jpa:  
+  database-platform: org.hibernate.dialect.MYSQL5Dialect
+  generate-ddl: true
+  show-sql: true
+  hibernate:
+      ddl-auto: create
+    
+      
